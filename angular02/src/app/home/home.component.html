@@ -1,3 +1,14 @@
 <div class="home-container">
   <h1 class="home-title">Home Page</h1>
+  <div *ngIf="clients.length > 0">
+    <h2>Clients List</h2>
+    <ul>
+      <li *ngFor="let client of clients">
+        {{ client.name }} - {{ client.email }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="clients.length === 0">
+    <p>No clients found.</p>
+  </div>
 </div>
