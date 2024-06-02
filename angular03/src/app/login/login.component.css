@@ -26,3 +26,6 @@
   height: auto;
   margin: 20px 0;
 }
+::ng-deep .mat-mdc-dialog-surface {
+  width: 30rem !important;
+}
