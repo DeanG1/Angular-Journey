@@ -1,0 +1,16 @@
+.popup {
+  background: #e5e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 12rem;
+}
+::ng-deep .mat-mdc-dialog-surface {
+  width: 30rem !important;
+  height: 12rem;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  margin-left: -15rem;
+}
