@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { TableComponent } from '../table/table.component';
 import { Teams } from '../table/table.component';
-
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../search.pipe';
+import { CommonModule } from '@angular/common';
 const TEAM_DATA: Teams[] = [
   {
-    name: 'Team 1',
+    name: 'PSD',
     project: 'Project 01',
     created_at: '2024-05-20',
     updated_at: '2024-05-20',
@@ -42,7 +44,7 @@ const TEAM_DATA: Teams[] = [
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TableComponent],
+  imports: [TableComponent, FormsModule, SearchPipe, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -66,6 +68,6 @@ export class HomeComponent {
       sortDescription: 'Sort by number of members',
     },
   ];
-
   data = TEAM_DATA;
+  searchText = '';
 }
