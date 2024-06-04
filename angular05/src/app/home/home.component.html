@@ -1,2 +1,6 @@
-<p>home works!</p>
-<app-table [columns]="columns" [data]="data"></app-table>
+<input [(ngModel)]="searchText" placeholder="Search..." />
+<app-table
+  [columns]="columns"
+  [data]="data"
+  *ngFor="let column of columns | search : searchText"
+></app-table>

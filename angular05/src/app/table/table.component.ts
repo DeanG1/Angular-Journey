@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ViewChild, Input } from '@angular/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
+import { SearchPipe } from '../search.pipe';
+import { FormsModule } from '@angular/forms';
 
 export interface Teams {
   name: string;
@@ -14,7 +16,13 @@ export interface Teams {
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [MatTableModule, MatSortModule, CommonModule],
+  imports: [
+    MatTableModule,
+    MatSortModule,
+    CommonModule,
+    SearchPipe,
+    FormsModule,
+  ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css',
 })
@@ -39,4 +47,5 @@ export class TableComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
+  searchText = '';
 }
