@@ -68,6 +68,10 @@ export class HomeComponent {
       sortDescription: 'Sort by number of members',
     },
   ];
+
   data = TEAM_DATA;
   searchText = '';
+  get filteredData() {
+    return new SearchPipe().transform(this.data, this.searchText);
+  }
 }
